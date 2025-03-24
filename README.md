@@ -1,4 +1,3 @@
-# 介绍 #
 # OmniGWAS工具包 (OGT)
 
 ## 概述  
@@ -11,21 +10,17 @@
 
 OGT以互操作性为核心设计，支持跨方法验证（如CAUSE与TwoSampleMR对比）和批量化处理，通过用户友好的封装脚本实现复杂性状遗传架构的可扩展分析。其模块化结构允许灵活定制，适用于从功能注释（MAGMA）到多祖先荟萃分析等多样化研究目标。  
 
----
-
 ## 持续进化与协作  
 - ​**持续扩展**：OGT正在积极开发中，计划整合新兴方法（如非线性孟德尔随机化工具DeepNull、跨祖先多基因评分工具PRS-CSx）并响应社区工具需求。  
 - ​**用户优先优化**：定期更新将优化工作流（如并行化MAGMA运行、容器化依赖环境），以减少运行时间和手动操作。  
 - ​**文档与教程**：持续完善的指南和单命令演示数据集将降低新用户的学习门槛。  
 
----
-
 ## 选择OGT的理由  
 - ​**节省时间**：消除50%以上的方法整合冗余代码。  
 - ​**一致性保障**：通过版本控制的流程确保跨项目可重复性。  
 - ​**前沿技术触达**：无缝对接最新算法，保持研究领先性。  
-
 ---
+# OmniGWAS-Toolkit (OGT)
 A comprehensive, modular pipeline for post-GWAS integrative analysis, designed to streamline downstream genomic investigations.  
 The OGT integrates multiple robust frameworks:  
 ​**Genetic Correlation & Heritability:** HDL (LD score regression) and LDSC for trait correlation and heritability estimation.  
@@ -35,16 +30,17 @@ The OGT integrates multiple robust frameworks:
 ​​**Standardization & Conversion:​** Automated preprocessing (GWAS_normalization.R) and format harmonization (MixeR_GWAS_convert.R).	  
 Built with interoperability in mind, OGT supports cross-method validation (e.g., CAUSE vs. TwoSampleMR) and batch processing via user-friendly wrappers, enabling scalable exploration of complex trait architectures. Its modular design allows flexible customization for diverse study goals, from functional annotation (MAGMA) to multi-ancestry meta-analysis.  
 
-​​​**Future-Proof & Collaborative**
+## Future-Proof & Collaborative**
 ​​​**Continuous Expansion​​​**: The OGT is under active development, with planned integration of emerging methods (e.g., DeepNull for nonlinear MR, PRS-CSx for cross-ancestry polygenic scoring) and community-driven tool requests.  
 ​​​**User-Centric Optimization​​​**: Regular updates will refine workflows (e.g., parallelized MAGMA runs, containerized environments for dependency control) to reduce runtime and manual intervention.  
 ​​​**Documentation & Tutorials​​​**: Evolving guides and one-command demo datasets will lower the learning curve for new users.  
 
-​​**Why choose OGT?​​**	
+## Why choose OGT?​​**	
 
 ​​​**Time-Saving:​​** Eliminate 50%+ of boilerplate code for method integration.  
 ​​**​Consistency:** Ensure reproducibility across projects with version-controlled pipelines.  
 ​​​**Cutting-Edge Access:​​** Stay ahead with seamless adoption of the latest algorithms.  
+---
 # 环境配置 #
 第一次运行前所需
 ## 模块配置 ##
