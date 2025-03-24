@@ -30,12 +30,12 @@ The OGT integrates multiple robust frameworks:
 ​​**Standardization & Conversion:​** Automated preprocessing (GWAS_normalization.R) and format harmonization (MixeR_GWAS_convert.R).	  
 Built with interoperability in mind, OGT supports cross-method validation (e.g., CAUSE vs. TwoSampleMR) and batch processing via user-friendly wrappers, enabling scalable exploration of complex trait architectures. Its modular design allows flexible customization for diverse study goals, from functional annotation (MAGMA) to multi-ancestry meta-analysis.  
 
-## Future-Proof & Collaborative**
+## Future-Proof & Collaborative
 ​​​**Continuous Expansion​​​**: The OGT is under active development, with planned integration of emerging methods (e.g., DeepNull for nonlinear MR, PRS-CSx for cross-ancestry polygenic scoring) and community-driven tool requests.  
 ​​​**User-Centric Optimization​​​**: Regular updates will refine workflows (e.g., parallelized MAGMA runs, containerized environments for dependency control) to reduce runtime and manual intervention.  
 ​​​**Documentation & Tutorials​​​**: Evolving guides and one-command demo datasets will lower the learning curve for new users.  
 
-## Why choose OGT?​​**	
+## Why choose OGT?​​
 
 ​​​**Time-Saving:​​** Eliminate 50%+ of boilerplate code for method integration.  
 ​​**​Consistency:** Ensure reproducibility across projects with version-controlled pipelines.  
