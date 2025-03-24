@@ -45,11 +45,36 @@ Built with interoperability in mind, OGT supports cross-method validation (e.g.,
 # 环境配置 #
 install
 ## 模块配置 ##
-![]https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/R-4.2.0.jpg
+![](https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/R-4.2.0.jpg)
+R version > 4.2.0
+```
+vim ~/my_modules/R-4.2.0   # 创建模块文件
 ```
 ```
-![]https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/Anaconda2.jpg
+#在~/my_modules/R-4.2.0中设置环境变量
+module-whatis "R-4.2.0"
+prepend-path    PATH           /yourpath/software/R-4.2.0/bin
+prepend-path    LD_LIBRARY_PATH /yourpath/software/R-4.2.0/lib
+...
 ```
+```
+#检查
+module avai
+```
+![](https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/Anaconda2.jpg)
+```
+mkdir -p ~/my_modules/anaconda  # 创建模块目录
+vim ~/my_modules/anaconda/Anaconda2   # 创建模块文件
+```
+```
+#在~/my_modules/anaconda/Anaconda2中设置环境变量
+prepend-path    PATH           /yourpath/anaconda2//bin
+prepend-path    LD_LIBRARY_PATH /yourpath/anaconda2//lib
+...
+```
+```
+#检查
+module avai
 ```
 ## 原始分析软件配置 ##
 ### (1)conjFDR ###
