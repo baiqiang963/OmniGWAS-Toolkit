@@ -121,7 +121,8 @@ cite from:https://github.com/HaobinZhou/Get_MR/
 cp fileFrequency.frq OmniGWAS-Toolkit
 ```
 #运行示例
-##仅对gwas1.txt和gwas2.txt执行数据预处理(自动识别hg38或hg19坐标轴并填补rs号，自动将hg38数据转为hg19，自动标准化表头，添加N列，自动计算并添加Z分数列)**
+##仅对gwas1.txt和gwas2.txt执行数据预处理  
+**自动识别hg38或hg19坐标轴并填补rs号，自动将hg38数据转为hg19，自动标准化表头，添加N列，自动计算并添加Z分数列**
 ### 方式1：
 ```
 sh ./Genetic.sh \
@@ -137,6 +138,8 @@ sh ./Genetic.sh \
     --formattedGWAS_path ./formatted \
     --output_path ./results
 ```
+---
+**以下分析过程中，会自动预处理GWAS数据后进行**
 ## 执行基本遗传分析（启用 HDL 和 LDSC）​
 ```
 sh ./Genetic.sh \
