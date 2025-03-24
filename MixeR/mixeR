@@ -1,0 +1,33 @@
+#!/bin/bash
+#PBS -N mixeR_job
+#PBS -t 1-20
+module purge
+
+export SINGULARITY_BIND="${Genetic}/MixeR/reference:/REF:ro"
+export SIF=/public/singularity
+export MIXER_COMMON_ARGS="--ld-file /REF/ldsc/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld --bim-file /REF/ldsc/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim --threads 16"
+export REP="rep${PBS_ARRAYID}"
+export EXTRACT="--extract /REF/ldsc/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.${REP}.snps"
+export PYTHON="singularity exec --home=$PWD:$HOME $SIF/mixer.sif python"
+
+
+
+$PYTHON /tools/mixer/precimed/mixer.py fit1 $MIXER_COMMON_ARGS $EXTRACT --trait1-file ${trait1} --out ${trait1_basename_noextension}.fit.${REP}
+$PYTHON /tools/mixer/precimed/mixer.py fit1 $MIXER_COMMON_ARGS $EXTRACT --trait1-file ${trait2} --out ${trait2_basename_noextension}.fit.${REP}
+$PYTHON /tools/mixer/precimed/mixer.py fit2 $MIXER_COMMON_ARGS $EXTRACT --trait1-file ${trait1} --trait2-file ${trait2} --trait1-params ${trait1_basename_noextension}.fit.${REP}.json --trait2-params ${trait2_basename_noextension}.fit.${REP}.json --out ${trait1_basename_noextension}_vs_${trait2_basename_noextension}.fit.${REP}
+
+$PYTHON /tools/mixer/precimed/mixer.py test1 $MIXER_COMMON_ARGS --trait1-file ${trait1} --load-params ${trait1_basename_noextension}.fit.${REP}.json --out ${trait1_basename_noextension}.test.${REP}
+$PYTHON /tools/mixer/precimed/mixer.py test1 $MIXER_COMMON_ARGS --trait1-file ${trait2} --load-params ${trait2_basename_noextension}.fit.${REP}.json --out ${trait2_basename_noextension}.test.${REP}
+$PYTHON /tools/mixer/precimed/mixer.py test2 $MIXER_COMMON_ARGS --trait1-file ${trait1} --trait2-file ${trait2} --load-params ${trait1_basename_noextension}_vs_${trait2_basename_noextension}.fit.${REP}.json --out ${trait1_basename_noextension}_vs_${trait2_basename_noextension}.test.${REP}
+
+$PYTHON /tools/mixer/precimed/mixer_figures.py combine --json ${trait1_basename_noextension}.fit.rep@.json  --out ${trait1_basename_noextension}.fit
+$PYTHON /tools/mixer/precimed/mixer_figures.py combine --json ${trait1_basename_noextension}.test.rep@.json  --out ${trait1_basename_noextension}.test
+$PYTHON /tools/mixer/precimed/mixer_figures.py combine --json ${trait2_basename_noextension}.fit.rep@.json  --out ${trait2_basename_noextension}.fit
+$PYTHON /tools/mixer/precimed/mixer_figures.py combine --json ${trait2_basename_noextension}.test.rep@.json  --out ${trait2_basename_noextension}.test
+$PYTHON /tools/mixer/precimed/mixer_figures.py combine --json ${trait1_basename_noextension}_vs_${trait2_basename_noextension}.fit.rep@.json  --out ${trait1_basename_noextension}_vs_${trait2_basename_noextension}.fit
+$PYTHON /tools/mixer/precimed/mixer_figures.py combine --json ${trait1_basename_noextension}_vs_${trait2_basename_noextension}.test.rep@.json  --out ${trait1_basename_noextension}_vs_${trait2_basename_noextension}.test
+
+$PYTHON /tools/mixer/precimed/mixer_figures.py one --json ${trait1_basename_noextension}.fit.json ${trait2_basename_noextension}.fit.json --out ${trait1_basename_noextension}_and_${trait2_basename_noextension}.fit --trait1 ${trait1_basename_noextension} --trait2 ${trait2_basename_noextension} --statistic mean std
+$PYTHON /tools/mixer/precimed/mixer_figures.py one --json ${trait1_basename_noextension}.test.json ${trait2_basename_noextension}.test.json --out ${trait1_basename_noextension}_and_${trait2_basename_noextension}.test --trait1 ${trait1_basename_noextension} ${trait2_basename_noextension} --statistic mean std
+
+$PYTHON /tools/mixer/precimed/mixer_figures.py two --json-fit ${trait1_basename_noextension}_vs_${trait2_basename_noextension}.fit.json --json-test ${trait1_basename_noextension}_vs_${trait2_basename_noextension}.test.json --out ${trait1_basename_noextension}_vs_${trait2_basename_noextension} --trait1 ${trait1_basename_noextension} --trait2 ${trait2_basename_noextension} --statistic mean std

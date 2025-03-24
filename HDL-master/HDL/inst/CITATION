@@ -1,0 +1,17 @@
+citHeader("If you use the HDL package, please cite:")
+
+citEntry(entry="Article",
+         title = "High-definition likelihood inference of genetic correlations across human complex traits",
+         author = personList(as.person("Zheng Ning"),
+                             as.person("Yudi Pawitan"),
+                             as.person("Xia Shen")),
+         journal      = "Nat Genet",
+         year         = "2020",
+         volume       = "0",
+         number       = "0",
+         pages        = "0-0",
+         url          = "https://doi.org/10.1038/s41588-020-0653-y",
+         
+         textVersion = 
+         paste("Ning, Z., Pawitan, Y. & Shen, X. High-definition likelihood inference of genetic correlations across human complex traits. Nat Genet (2020). https://doi.org/10.1038/s41588-020-0653-y")
+)

@@ -1,0 +1,151 @@
+#!/bin/bash
+#PBS -N mixeR_job
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=00:30:00
+#PBS -o mixeR_output.log
+#PBS -e mixeR_error.log
+#PBS -t 1-20
+
+export SIF=/public/singularity
+export PYTHON="singularity exec --home=$PWD:/home/tengli/BQ_GWAS $SIF/mixer.sif python"
+REP="rep${PBS_ARRAYID}"
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.1 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.1.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.2 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.2.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.3 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.3.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.4 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.4.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.5 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.5.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.6 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.6.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.7 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.7.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.8 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.8.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.9 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.9.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.10 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.10.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.11 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.11.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.12 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.12.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.13 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.13.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.14 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.14.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.15 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.15.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.16 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.16.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.17 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.17.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.18 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.18.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.19 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.19.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.20 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.20.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.21 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.21.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+$PYTHON /tools/mixer/precimed/mixer.py ld \
+   --lib /tools/mixer/src/build/lib/libbgmg.so \
+   --bfile /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.22 \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.22.run4.ld \
+   --r2min 0.05 --ldscore-r2min 0.05 --ld-window-kb 30000
+
+export REP=1 # repeat for REP in 1..20
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib <MIXER_ROOT>/src/build/lib/libbgmg.so \
+   --bim-file LDSR/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file LDSR/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out LDSR/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep${SLURM_ARRAY_TASK_ID}.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed ${SLURM_ARRAY_TASK_ID}

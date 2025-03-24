@@ -1,0 +1,95 @@
+2021-04-05 11:20  zheng
+    * Updated to version 1.3.10
+    * A new optional argument `fill.missing.N` is added in both the R version and the command line version. If NULL (default), the SNPs with missing N are removed. One of "median", "min" or "max" can be given so that the missing N will be filled accordingly. For example, "median" means the missing N are filled with the median N of the SNPs with available N.
+    * A new optional argument `intercept.output` is added in the R version for those who are interested in. By setting `intercept.output=TRUE`, the intercept terms estimates and se will be reported in estimates.df.
+    * A bug related to multiallelic or duplicated SNPs is fixed.
+    * Codes have been added to handle when column `b` is OR instead of log(OR).
+
+2020-11-24 11:20  zheng
+    * Updated to version 1.3.9
+    * SNPs without N information are now excluded during data loading
+    * A bug related to lower case A1 and A2 is fixed. The bug might lead to h2 mistakenly estimated to be 0.
+
+2020-07-12 22:20  zheng
+    * Updated to version 1.3.8
+    * A new optional argument `jackknife.df` is added. By setting `jackknife.df=TRUE`, it allows to output the block-jackknife estimates of heritabilities, genetic covariance and genetic correlation.
+
+2020-07-02 18:40  zheng
+    * Updated to version 1.3.7
+    * HDL.h2 is added to return the point estimate and standard error of the narrow sense heritability of one trait based on GWAS summary statistics.  
+
+2020-06-30 23:40  zheng
+    * Updated to version 1.3.6
+    * HDL was formally published on Nat Genet! Citation information has been updated.
+    * Some bugs related to NA and h2 have been fixed. 
+
+2020-06-16 22:30  zheng
+    * Updated to version 1.3.5
+    * In command line version, reading data is handled by data.table::fread. So reading data becomes faster and more file types are allowed as input in HDL.run.R, HDL.parallel.run.R and HDL.data.wrangling.
+    * By reading the new uncompressed reference panel files, HDL becomes faster.
+
+2020-06-08 15:00  zheng
+    * Updated to version 1.3.4
+    * More initial values are tried to avoid convergence problem when estimate h12.
+
+2020-06-07 20:00  zheng
+    * Updated to version 1.3.3
+    * Point estimates are used as initial values in jackknife.
+    * Point estimates are also printed before s.e. estimation.
+
+2020-06-06 23:00  zheng
+    * Updated to version 1.3.2
+    * eigen.cut is added as an argument to allow user specify it. 
+    * Features added to automatically select the eigen.cut which gives the most stable heritability estimates.
+
+2020-06-02 11:00  zheng
+    * Updated to version 1.3.1
+    * Features added for supporting self-computed reference panel.
+
+2020-05-05 15:00  zheng
+    * Updated to version 1.3.0
+    * Parallel algorithm has been added. (HDL.rg.parallel and HDL.parallel.run.R)
+
+2020-04-23 07:30  zheng
+    * Updated to version 1.2.1
+    * Replaced the full-likelihood function (which generate convergence problems in jackknife) by eigen methods to avoid 0 estimate of h2.
+    * HDL is now using median instead of max of N as the number of individuals of a GWAS.
+    * Code for supporting HapMap2 reference panel was added.
+
+2020-02-26 06:30  zheng
+    * Updated to version 1.1.1
+    * Added HDL.data.wrangling.R for transforming GWAS into HDL input format
+
+2020-02-19 20:00  zheng
+
+    * Updated to version 1.1
+    * Formalized previous beta version for using imputed reference panel
+    * Provided examples for using imputed reference panel  
+
+2020-02-17 21:30  zheng
+
+    * Updated to version 1.0-2
+    * Mismatch SNPs solved
+    * Uploaded imputed examples (gwas1.imputed.example.rda etc.)
+
+2020-01-15 16:30  zheng
+
+    * Changed the installation files from .gz to folder
+    * Updated HDL.install.R
+
+2019-12-23 14:17  xia
+
+    * Updated to version 1.0-1 
+    * Link added for UK Biobank imputed marker reference
+    * Welcome message added
+    * citation() enabled
+    * This ChangeLog added
+      
+2019-09-19 16:30  zheng
+
+    * HDL packaged! Initial version 1.0
+    * Genetic correlation estimation using full likelihood
+      based on GWAS summary statistics
+      	UK Biobank SNP array reference markers
+      	2-fold increase in estimation efficiency over LDSC
+      	

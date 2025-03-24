@@ -1,0 +1,138 @@
+export SIF=/public/singularity
+export PYTHON="singularity exec --home=$PWD:/home/tengli/BQ_GWAS $SIF/mixer.sif python"
+export REP=1 # repeat for REP in 1..20
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep1.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 1 
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep2.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 2
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep3.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 3
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep4.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 4
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep5.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 5
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep6.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 6
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep7.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 7
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep8.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 8
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep9.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 9
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep10.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 10
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep11.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 11
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep12.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 12
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep13.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 13
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep14.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 14
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep15.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 15
+
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep16.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 16
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep17.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 17
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep18.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 18
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep19.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 19
+$PYTHON /tools/mixer/precimed/mixer.py snps \
+   --lib  /tools/mixer/src/build/lib/libbgmg.so \
+   --bim-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.bim \
+   --ld-file /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.@.run4.ld \
+   --out /home/tengli/BQ_GWAS/MixeR/reference/1000G_EUR_Phase3_plink/1000G.EUR.QC.prune_maf0p05_rand2M_r2p8.rep20.snps \
+   --maf 0.05 --subset 2000000 --r2 0.8 --seed 20
