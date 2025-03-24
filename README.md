@@ -1,4 +1,31 @@
 # 介绍 #
+# OmniGWAS工具包 (OGT)
+
+## 概述  
+一套全面的模块化流程，用于全基因组关联研究（GWAS）下游整合分析，旨在简化基因组学研究的后续探索。OGT整合了多种稳健框架：  
+- ​**遗传相关性与遗传力**：HDL（LD分数回归）和LDSC，用于性状相关性分析和遗传力估计。  
+- ​**精细定位与跨性状分析**：ASSET和conjFDR，用于共定位和多效性检测。  
+- ​**因果推断**：GSMR、TwoSampleMR和CAUSE，支持孟德尔随机化及多变量因果建模。  
+- ​**多基因结构解析**：MiXeR量化多基因重叠，MAGMA实现基因集/通路富集分析。  
+- ​**标准化与格式转换**：自动化预处理（`GWAS_normalization.R`）和格式统一（`MixeR_GWAS_convert.R`）。  
+
+OGT以互操作性为核心设计，支持跨方法验证（如CAUSE与TwoSampleMR对比）和批量化处理，通过用户友好的封装脚本实现复杂性状遗传架构的可扩展分析。其模块化结构允许灵活定制，适用于从功能注释（MAGMA）到多祖先荟萃分析等多样化研究目标。  
+
+---
+
+## 持续进化与协作  
+- ​**持续扩展**：OGT正在积极开发中，计划整合新兴方法（如非线性孟德尔随机化工具DeepNull、跨祖先多基因评分工具PRS-CSx）并响应社区工具需求。  
+- ​**用户优先优化**：定期更新将优化工作流（如并行化MAGMA运行、容器化依赖环境），以减少运行时间和手动操作。  
+- ​**文档与教程**：持续完善的指南和单命令演示数据集将降低新用户的学习门槛。  
+
+---
+
+## 选择OGT的理由  
+- ​**节省时间**：消除50%以上的方法整合冗余代码。  
+- ​**一致性保障**：通过版本控制的流程确保跨项目可重复性。  
+- ​**前沿技术触达**：无缝对接最新算法，保持研究领先性。  
+
+---
 A comprehensive, modular pipeline for post-GWAS integrative analysis, designed to streamline downstream genomic investigations.  
 The OGT integrates multiple robust frameworks:  
 ​**Genetic Correlation & Heritability:** HDL (LD score regression) and LDSC for trait correlation and heritability estimation.  
