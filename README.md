@@ -21,6 +21,7 @@ OGT以互操作性为核心设计，支持跨方法验证（如CAUSE与TwoSample
 - ​**前沿技术触达**：无缝对接最新算法，保持研究领先性。  
 ---
 # OmniGWAS-Toolkit (OGT)
+## Introduction
 A comprehensive, modular pipeline for post-GWAS integrative analysis, designed to streamline downstream genomic investigations.  
 The OGT integrates multiple robust frameworks:  
 ​**Genetic Correlation & Heritability:** HDL (LD score regression) and LDSC for trait correlation and heritability estimation.  
@@ -37,12 +38,12 @@ Built with interoperability in mind, OGT supports cross-method validation (e.g.,
 
 ## Why choose OGT?​​
 
-​​​**Time-Saving**:​​ Eliminate 50%+ of boilerplate code for method integration.  
-​​**​Consistency**: Ensure reproducibility across projects with version-controlled pipelines.  
-​​​**Cutting-Edge Access**: Stay ahead with seamless adoption of the latest algorithms.  
+​​​** Time-Saving **:​​ Eliminate 50%+ of boilerplate code for method integration.  
+​​** ​Consistency **: Ensure reproducibility across projects with version-controlled pipelines.  
+​​​** Cutting-Edge Access **: Stay ahead with seamless adoption of the latest algorithms.  
 ---
 # 环境配置 #
-第一次运行前所需
+install
 ## 模块配置 ##
 
 ## 原始分析软件配置 ##
@@ -119,8 +120,9 @@ cite from:https://github.com/HaobinZhou/Get_MR/
 ```
 cp fileFrequency.frq OmniGWAS-Toolkit
 ```
-#仅对gwas1.txt和gwas2.txt执行数据预处理(自动识别hg38或hg19坐标轴并填补rs号，自动将hg38数据转为hg19，自动标准化表头，添加N列，自动计算并添加Z分数列)
-## 方式1：
+#运行示例
+##仅对gwas1.txt和gwas2.txt执行数据预处理(自动识别hg38或hg19坐标轴并填补rs号，自动将hg38数据转为hg19，自动标准化表头，添加N列，自动计算并添加Z分数列)**
+### 方式1：
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1.txt \
@@ -128,14 +130,14 @@ sh ./Genetic.sh \
     --formattedGWAS_path ./formatted \
     --output_path ./results
 ```
-## 方式2：
+### 方式2：
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1.txt，gwas2.txt \
     --formattedGWAS_path ./formatted \
     --output_path ./results
 ```
-#执行基本遗传分析（启用 HDL 和 LDSC）​
+## 执行基本遗传分析（启用 HDL 和 LDSC）​
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1.txt \
@@ -144,7 +146,7 @@ sh ./Genetic.sh \
     --output_path ./results \
     --analysis HDL LDSC
 ```	
-#执行基本因果推断(因->果：gwas1a->gwas2a)（启用TwoSampleMR和GSMR以及CAUSE）​
+## 执行基本因果推断(因->果：gwas1a->gwas2a)（启用TwoSampleMR和GSMR以及CAUSE）​
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1a.txt \
@@ -153,7 +155,7 @@ sh ./Genetic.sh \
     --output_path ./results \
     --analysis TwoSampleMR GSMR CAUSE
 ```	
-#多GWAS文件输入执行因果推断(因->果：gwas1a->gwas2a,gwas1a->gwas2b,gwas1b->gwas2a,gwas1b->gwas2b)
+### 多GWAS文件输入执行因果推断(因->果：gwas1a->gwas2a,gwas1a->gwas2b,gwas1b->gwas2a,gwas1b->gwas2b)
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1a.txt,gwas1b.txt \
@@ -162,16 +164,9 @@ sh ./Genetic.sh \
     --output_path ./results \
     --analysis TwoSampleMR GSMR CAUSE
 ```	
-#注意事项：执行GSMR分析的时候，必须连同TwoSampleMR一起执行
-```
-sh ./Genetic.sh \
-    --GWAS1 gwas1a.txt,gwas1b.txt \
-    --GWAS2 gwas2a.txt,gwas2b.txt \
-    --formattedGWAS_path ./formatted \
-    --output_path ./results \
-    --analysis TwoSampleMR GSMR
-```
-#指定参考人群（非指定情况下，默认为EUR）和 IV 参数（非指定情况下，默认为5E-8）以及LD R2（默认0.001）
+** 注意事项:在集成脚本中，GSMR与CAUSE分析需要TwoSampleMR中的部分结果作为前置文件,因此需要连同TwoSampleMR仪器分析 **
+
+### 指定参考人群（非指定情况下，默认为EUR）和 IV 参数（非指定情况下，默认为5E-8）以及LD R2（默认0.001）
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1a.txt,gwas1b.txt \
@@ -184,8 +179,8 @@ sh ./Genetic.sh \
     --analysis TwoSampleMR GSMR CAUSE
 ```
 
-
-#对4个GWAS汇总数据挨个进行MAGMA分析
+## MAGMA分析
+## 对4个GWAS汇总数据挨个进行MAGMA分析
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1a.txt,gwas1b.txt \
@@ -194,7 +189,7 @@ sh ./Genetic.sh \
     --output_path ./results \
     --analysis MAGMA
 ```	
-#对单个GWAS汇总数据进行MAGMA分析
+## 对单个GWAS汇总数据进行MAGMA分析
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1b.txt \
@@ -202,7 +197,7 @@ sh ./Genetic.sh \
     --output_path ./results \
     --analysis MAGMA
 ```
-#对多个东亚人群GWAS汇总数据执行所有分析
+### 对东亚人群的多个GWAS汇总数据执行所有分析
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1aEAS.txt,gwas1bEAS.txt \
@@ -213,7 +208,20 @@ sh ./Genetic.sh \
     --IV_P 1e-6 \
 	--LD_R2 0.1 \
 	--ASSET_casecontrol_table_path ./results/cc.csv
-    --analysis HDL LDSC ASSET TwoSampleMR GSMR CAUSE MiXeR MAGMA
+    --analysis LDSC ASSET TwoSampleMR GSMR CAUSE MAGMA
+```
+### 对欧洲人群的多个GWAS汇总数据执行所有分析
+```
+sh ./Genetic.sh \
+    --GWAS1 gwas1a.txt,gwas1b.txt \
+    --GWAS2 gwas2a.txt,gwas2b.txt \
+    --formattedGWAS_path ./formatted \
+    --output_path ./results \
+    --Ref EAS \
+    --IV_P 1e-6 \
+	--LD_R2 0.1 \
+	--ASSET_casecontrol_table_path ./results/cc.csv
+    --analysis HDL LDSC ASSET TwoSampleMR GSMR CAUSE MAGMA conjFDR MiXeR
 ```
 # 注意事项 #
 conjFDR HDL MiXeR仅能执行欧洲人群的post-GWAS分析
