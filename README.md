@@ -37,9 +37,9 @@ Built with interoperability in mind, OGT supports cross-method validation (e.g.,
 
 ## Why choose OGT?​​
 
-​​​**Time-Saving:​​** Eliminate 50%+ of boilerplate code for method integration.  
-​​**​Consistency:** Ensure reproducibility across projects with version-controlled pipelines.  
-​​​**Cutting-Edge Access:​​** Stay ahead with seamless adoption of the latest algorithms.  
+​​​**Time-Saving**:​​ Eliminate 50%+ of boilerplate code for method integration.  
+​​**​Consistency**: Ensure reproducibility across projects with version-controlled pipelines.  
+​​​**Cutting-Edge Access**: Stay ahead with seamless adoption of the latest algorithms.  
 ---
 # 环境配置 #
 第一次运行前所需
