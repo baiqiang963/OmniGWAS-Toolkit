@@ -45,7 +45,12 @@ Built with interoperability in mind, OGT supports cross-method validation (e.g.,
 # 环境配置 #
 install
 ## 模块配置 ##
-
+![]https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/R-4.2.0.jpg
+```
+```
+![]https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/Anaconda2.jpg
+```
+```
 ## 原始分析软件配置 ##
 ### (1)conjFDR ###
 github:https://github.com/precimed/pleiofdr
@@ -170,7 +175,7 @@ sh ./Genetic.sh \
     --output_path ./results \
     --analysis TwoSampleMR GSMR
 ```	
-** 注意事项:在集成脚本中，GSMR与CAUSE分析需要TwoSampleMR中的部分结果作为前置文件,因此需要连同TwoSampleMR仪器分析 **
+**注意事项:在集成脚本中，GSMR与CAUSE分析需要TwoSampleMR中的部分结果作为前置文件,因此需要连同TwoSampleMR仪器分析**
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1a.txt,gwas1b.txt \
@@ -182,7 +187,7 @@ sh ./Genetic.sh \
 	--LD_R2 0.1 \
     --analysis TwoSampleMR GSMR
 ```
-** 指定参考人群（非指定情况下，默认为EUR）和 IV 参数（非指定情况下，默认为5E-8）以及LD R2（默认0.001）
+**指定参考人群（非指定情况下，默认为EUR）和 IV 参数（非指定情况下，默认为5E-8）以及LD R2（默认0.001）**
 ## MAGMA分析
 ### 对多个GWAS汇总数据挨个进行MAGMA分析
 ```
@@ -228,4 +233,4 @@ sh ./Genetic.sh \
 	--ASSET_casecontrol_table_path ./results/cc.csv
     --analysis HDL LDSC ASSET TwoSampleMR GSMR CAUSE MAGMA conjFDR MiXeR
 ```
-** 注意事项：conjFDR HDL MiXeR仅能执行欧洲人群的post-GWAS分析
+**注意事项：conjFDR HDL MiXeR仅能执行欧洲人群的post-GWAS分析**
