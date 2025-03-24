@@ -1,23 +1,23 @@
 # 介绍 #
 A comprehensive, modular pipeline for post-GWAS integrative analysis, designed to streamline downstream genomic investigations. 	
 The OGT integrates multiple robust frameworks:
-​** Genetic Correlation & Heritability: ** HDL (LD score regression) and LDSC for trait correlation and heritability estimation.	
-​​** Fine-Mapping & Cross-Trait Analysis: ​** ASSET and conjFDR for colocalization and pleiotropy detection.	
-​** ​Causal Inference: ​** GSMR, TwoSampleMR, and CAUSE for Mendelian randomization and multivariable causal modeling.	
-​​** Polygenic Architecture: ​** MiXeR for polygenic overlap quantification and MAGMA for gene-set/pathway enrichment.	
-​​** Standardization & Conversion: ​** Automated preprocessing (GWAS_normalization.R) and format harmonization (MixeR_GWAS_convert.R).	
+​**Genetic Correlation & Heritability:** HDL (LD score regression) and LDSC for trait correlation and heritability estimation.	
+​​**Fine-Mapping & Cross-Trait Analysis:** ASSET and conjFDR for colocalization and pleiotropy detection.	
+​**Causal Inference:​** GSMR, TwoSampleMR, and CAUSE for Mendelian randomization and multivariable causal modeling.	
+​​**Polygenic Architecture:** MiXeR for polygenic overlap quantification and MAGMA for gene-set/pathway enrichment.	
+​​**Standardization & Conversion:​** Automated preprocessing (GWAS_normalization.R) and format harmonization (MixeR_GWAS_convert.R).	
 Built with interoperability in mind, OGT supports cross-method validation (e.g., CAUSE vs. TwoSampleMR) and batch processing via user-friendly wrappers, enabling scalable exploration of complex trait architectures. Its modular design allows flexible customization for diverse study goals, from functional annotation (MAGMA) to multi-ancestry meta-analysis.
 
-​Future-Proof & Collaborative
+​​​**Future-Proof & Collaborative**
 Continuous Expansion: The OGT is under active development, with planned integration of emerging methods (e.g., DeepNull for nonlinear MR, PRS-CSx for cross-ancestry polygenic scoring) and community-driven tool requests.
 User-Centric Optimization: Regular updates will refine workflows (e.g., parallelized MAGMA runs, containerized environments for dependency control) to reduce runtime and manual intervention.
 Documentation & Tutorials: Evolving guides and one-command demo datasets will lower the learning curve for new users.
 
-​​** Why choose OGT?​​ ** 
+​​**Why choose OGT?​​**	
 
-​​​** Time-Saving: ​​** Eliminate 50%+ of boilerplate code for method integration.
-​​** ​Consistency: ​​** Ensure reproducibility across projects with version-controlled pipelines.
-​​​** Cutting-Edge Access: ​​** Stay ahead with seamless adoption of the latest algorithms.
+​​​**Time-Saving:​​** Eliminate 50%+ of boilerplate code for method integration.
+​​**​Consistency:** Ensure reproducibility across projects with version-controlled pipelines.
+​​​**Cutting-Edge Access:​​** Stay ahead with seamless adoption of the latest algorithms.
 # 环境配置 #
 第一次运行前所需
 ## 模块配置 ##
