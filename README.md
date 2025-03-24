@@ -140,7 +140,8 @@ sh ./Genetic.sh \
 ```
 ---
 **以下分析过程中，会自动预处理GWAS数据后进行**
-## 执行基本遗传分析（启用 HDL 和 LDSC）​
+## 执行基本遗传分析  
+启用 HDL 和 LDSC​
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1.txt \
@@ -149,27 +150,27 @@ sh ./Genetic.sh \
     --output_path ./results \
     --analysis HDL LDSC
 ```	
-## 执行基本因果推断(因->果：gwas1a->gwas2a)（启用TwoSampleMR和GSMR以及CAUSE）​
+## 执行基本因果推断  
+因->果：gwas1a->gwas2a（启用TwoSampleMR和GSMR以及CAUSE）​
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1a.txt \
     --GWAS2 gwas2a.txt \
     --formattedGWAS_path ./formatted \
     --output_path ./results \
-    --analysis TwoSampleMR GSMR CAUSE
+    --analysis TwoSampleMR
 ```	
-### 多GWAS文件输入执行因果推断(因->果：gwas1a->gwas2a,gwas1a->gwas2b,gwas1b->gwas2a,gwas1b->gwas2b)
+### 多GWAS文件输入执行GSMR因果推断  
+因->果：gwas1a->gwas2a,gwas1a->gwas2b,gwas1b->gwas2a,gwas1b->gwas2b
 ```
 sh ./Genetic.sh \
-    --GWAS1 gwas1a.txt,gwas1b.txt \
-    --GWAS2 gwas2a.txt,gwas2b.txt \
+    --GWAS1 gwas1EAS.txt,gwas1EAS.txt \
+    --GWAS2 gwas2EAS.txt,gwas2EAS.txt \
     --formattedGWAS_path ./formatted \
     --output_path ./results \
-    --analysis TwoSampleMR GSMR CAUSE
+    --analysis TwoSampleMR GSMR
 ```	
 ** 注意事项:在集成脚本中，GSMR与CAUSE分析需要TwoSampleMR中的部分结果作为前置文件,因此需要连同TwoSampleMR仪器分析 **
-
-### 指定参考人群（非指定情况下，默认为EUR）和 IV 参数（非指定情况下，默认为5E-8）以及LD R2（默认0.001）
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1a.txt,gwas1b.txt \
@@ -179,11 +180,11 @@ sh ./Genetic.sh \
     --Ref EAS \
     --IV_P 1e-6 \
 	--LD_R2 0.1 \
-    --analysis TwoSampleMR GSMR CAUSE
+    --analysis TwoSampleMR GSMR
 ```
-
+** 指定参考人群（非指定情况下，默认为EUR）和 IV 参数（非指定情况下，默认为5E-8）以及LD R2（默认0.001）
 ## MAGMA分析
-## 对4个GWAS汇总数据挨个进行MAGMA分析
+### 对多个GWAS汇总数据挨个进行MAGMA分析
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1a.txt,gwas1b.txt \
@@ -192,7 +193,7 @@ sh ./Genetic.sh \
     --output_path ./results \
     --analysis MAGMA
 ```	
-## 对单个GWAS汇总数据进行MAGMA分析
+### 对单个GWAS汇总数据进行MAGMA分析
 ```
 sh ./Genetic.sh \
     --GWAS1 gwas1b.txt \
@@ -200,6 +201,7 @@ sh ./Genetic.sh \
     --output_path ./results \
     --analysis MAGMA
 ```
+## 完整执行
 ### 对东亚人群的多个GWAS汇总数据执行所有分析
 ```
 sh ./Genetic.sh \
@@ -226,5 +228,4 @@ sh ./Genetic.sh \
 	--ASSET_casecontrol_table_path ./results/cc.csv
     --analysis HDL LDSC ASSET TwoSampleMR GSMR CAUSE MAGMA conjFDR MiXeR
 ```
-# 注意事项 #
-conjFDR HDL MiXeR仅能执行欧洲人群的post-GWAS分析
+** 注意事项：conjFDR HDL MiXeR仅能执行欧洲人群的post-GWAS分析
