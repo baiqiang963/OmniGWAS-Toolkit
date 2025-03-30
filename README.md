@@ -45,7 +45,7 @@ Built with interoperability in mind, OGT supports cross-method validation (e.g.,
 # 环境配置 #
 install
 ## 模块配置 ##
-![](https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/R-4.2.0.jpg)
+![](https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/R-4.2.0.jpg)  
 R version > 4.2.0
 ```
 vim ~/my_modules/R-4.2.0   # 创建模块文件
@@ -150,8 +150,12 @@ cite from:https://github.com/HaobinZhou/Get_MR/
 ```
 cp fileFrequency.frq OmniGWAS-Toolkit
 ```
-#运行示例
-##仅对gwas1.txt和gwas2.txt执行数据预处理  
+# 运行示例
+## 准备`cc.csv`文件  
+要求列名：`file`, `case`, `control`, `total`
+例如：  
+![](https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/cc.jpg)
+## 仅对gwas1.txt和gwas2.txt执行数据预处理  
 **自动识别hg38或hg19坐标轴并填补rs号，自动将hg38数据转为hg19，自动标准化表头，添加N列，自动计算并添加Z分数列**
 ### 方式1：
 ```
@@ -159,6 +163,7 @@ sh ./Genetic.sh \
     --GWAS1 gwas1.txt \
     --GWAS2 gwas2.txt \
     --formattedGWAS_path ./formatted \
+    --casecontrol_table_path ./formatted/cc.csv \
     --output_path ./results
 ```
 ### 方式2：
@@ -166,6 +171,7 @@ sh ./Genetic.sh \
 sh ./Genetic.sh \
     --GWAS1 gwas1.txt，gwas2.txt \
     --formattedGWAS_path ./formatted \
+    --casecontrol_table_path ./formatted/cc.csv \
     --output_path ./results
 ```
 ---
@@ -177,6 +183,7 @@ sh ./Genetic.sh \
     --GWAS1 gwas1.txt \
     --GWAS2 gwas2.txt \
     --formattedGWAS_path ./formatted \
+    --casecontrol_table_path ./formatted/cc.csv \
     --output_path ./results \
     --analysis HDL LDSC
 ```	
@@ -187,6 +194,7 @@ sh ./Genetic.sh \
     --GWAS1 gwas1a.txt \
     --GWAS2 gwas2a.txt \
     --formattedGWAS_path ./formatted \
+    --casecontrol_table_path ./formatted/cc.csv \
     --output_path ./results \
     --analysis TwoSampleMR
 ```	
@@ -197,6 +205,7 @@ sh ./Genetic.sh \
     --GWAS1 gwas1EAS.txt,gwas1EAS.txt \
     --GWAS2 gwas2EAS.txt,gwas2EAS.txt \
     --formattedGWAS_path ./formatted \
+    --casecontrol_table_path ./formatted/cc.csv \
     --output_path ./results \
     --analysis TwoSampleMR GSMR
 ```	
@@ -206,6 +215,7 @@ sh ./Genetic.sh \
     --GWAS1 gwas1a.txt,gwas1b.txt \
     --GWAS2 gwas2a.txt,gwas2b.txt \
     --formattedGWAS_path ./formatted \
+    --casecontrol_table_path ./formatted/cc.csv \
     --output_path ./results \
     --Ref EAS \
     --IV_P 1e-6 \
@@ -220,6 +230,7 @@ sh ./Genetic.sh \
     --GWAS1 gwas1a.txt,gwas1b.txt \
     --GWAS2 gwas2a.txt,gwas2b.txt \
     --formattedGWAS_path ./formatted \
+    --casecontrol_table_path ./formatted/cc.csv \
     --output_path ./results \
     --analysis MAGMA
 ```	
@@ -228,6 +239,7 @@ sh ./Genetic.sh \
 sh ./Genetic.sh \
     --GWAS1 gwas1b.txt \
     --formattedGWAS_path ./formatted \
+    --casecontrol_table_path ./formatted/cc.csv \
     --output_path ./results \
     --analysis MAGMA
 ```
@@ -238,6 +250,7 @@ sh ./Genetic.sh \
     --GWAS1 gwas1aEAS.txt,gwas1bEAS.txt \
     --GWAS2 gwas2aEAS.txt,gwas2bEAS.txt \
     --formattedGWAS_path ./formatted \
+    --casecontrol_table_path ./formatted/cc.csv \
     --output_path ./results \
     --Ref EAS \
     --IV_P 1e-6 \
@@ -251,6 +264,7 @@ sh ./Genetic.sh \
     --GWAS1 gwas1a.txt,gwas1b.txt \
     --GWAS2 gwas2a.txt,gwas2b.txt \
     --formattedGWAS_path ./formatted \
+    --casecontrol_table_path ./formatted/cc.csv \
     --output_path ./results \
     --Ref EAS \
     --IV_P 1e-6 \
@@ -258,7 +272,7 @@ sh ./Genetic.sh \
 	--ASSET_casecontrol_table_path ./results/cc.csv
     --analysis HDL LDSC ASSET TwoSampleMR GSMR CAUSE MAGMA conjFDR MiXeR
 ```
-**注意事项：conjFDR HDL MiXeR仅能执行欧洲人群的post-GWAS分析**
+**注意事项：conjFDR HDL MiXeR仅能执行欧洲人群GWAS的分析**
 # 引用总结 #
-你应该查看[内置分析介绍与引用.pptx][https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/%E5%86%85%E7%BD%AE%E5%88%86%E6%9E%90%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%BC%95%E7%94%A8.pptx]  
+你应该查看[内置分析介绍与引用.pptx](https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/%E5%86%85%E7%BD%AE%E5%88%86%E6%9E%90%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%BC%95%E7%94%A8.pptx)
 这可能对你非常有帮助。
