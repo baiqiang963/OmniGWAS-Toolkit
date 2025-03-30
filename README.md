@@ -79,7 +79,7 @@ module avai
 **安装`module load gcta_1.93`**  
 ![](https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/gcta.jpg)  
 ...
-**安装`module load matlab`, version > 2015**
+**安装`module load matlab`, version > 2015**  
 ![](https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/1743325331929.jpg)  
 ...
 ## 原始分析软件配置 ##
