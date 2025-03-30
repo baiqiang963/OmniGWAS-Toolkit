@@ -76,7 +76,7 @@ prepend-path    LD_LIBRARY_PATH /yourpath/anaconda2//lib
 #检查
 module avai
 ```
-**安装`module load gcta_1.93`**
+**安装`module load gcta_1.93`**  
 ![](https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/gcta.jpg)  
 ...
 ## 原始分析软件配置 ##
