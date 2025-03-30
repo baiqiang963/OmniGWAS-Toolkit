@@ -259,3 +259,5 @@ sh ./Genetic.sh \
     --analysis HDL LDSC ASSET TwoSampleMR GSMR CAUSE MAGMA conjFDR MiXeR
 ```
 **注意事项：conjFDR HDL MiXeR仅能执行欧洲人群的post-GWAS分析**
+# 引用总结 #
+你应该查看[内置分析介绍与引用.pptx][https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/%E5%86%85%E7%BD%AE%E5%88%86%E6%9E%90%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%BC%95%E7%94%A8.pptx],这可能对你非常有帮助。
