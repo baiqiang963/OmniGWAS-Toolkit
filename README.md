@@ -43,10 +43,9 @@ Built with interoperability in mind, OGT supports cross-method validation (e.g.,
 ​​​​- ​**Cutting-Edge Access**: Stay ahead with seamless adoption of the latest algorithms.  
 ---
 # 环境配置 #
-install
 ## 模块配置 ##
+**安装`module load R-4.2.0`, R version > 4.2.0**
 ![](https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/R-4.2.0.jpg)  
-R version > 4.2.0
 ```
 vim ~/my_modules/R-4.2.0   # 创建模块文件
 ```
@@ -61,6 +60,7 @@ prepend-path    LD_LIBRARY_PATH /yourpath/software/R-4.2.0/lib
 #检查
 module avai
 ```
+**安装`module load anaconda/Anaconda2`**
 ![](https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/Anaconda2.jpg)
 ```
 mkdir -p ~/my_modules/anaconda  # 创建模块目录
@@ -76,6 +76,9 @@ prepend-path    LD_LIBRARY_PATH /yourpath/anaconda2//lib
 #检查
 module avai
 ```
+**安装`module load gcta_1.93`**
+![](https://github.com/baiqiang963/OmniGWAS-Toolkit/blob/main/pictures/gcta.jpg)  
+...
 ## 原始分析软件配置 ##
 ### (1)conjFDR ###
 github:https://github.com/precimed/pleiofdr
