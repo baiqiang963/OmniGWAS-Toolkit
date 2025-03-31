@@ -261,7 +261,6 @@ sh ./Genetic.sh \
     --Ref EAS \
     --IV_P 1e-6 \
 	--LD_R2 0.1 \
-	--ASSET_casecontrol_table_path ./results/cc.csv
     --analysis LDSC ASSET TwoSampleMR GSMR CAUSE MAGMA
 ```
 ### 对欧洲人群的多个GWAS汇总数据执行所有分析
@@ -275,7 +274,6 @@ sh ./Genetic.sh \
     --Ref EAS \
     --IV_P 1e-6 \
 	--LD_R2 0.1 \
-	--ASSET_casecontrol_table_path ./results/cc.csv
     --analysis HDL LDSC ASSET TwoSampleMR GSMR CAUSE MAGMA conjFDR MiXeR
 ```
 **注意事项：conjFDR HDL MiXeR仅能执行欧洲人群GWAS的分析**
